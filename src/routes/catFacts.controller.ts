@@ -38,8 +38,8 @@ export class catFactsController {
         max_length: req.query.max_length,
       };
 
-      const res: any = await axios.get(`https://catfact.ninja/fact`, {params});
-      res.status(200).json(res.data);
+      const query: any = await axios.get(`https://catfact.ninja/fact`, {params});
+      res.status(200).json(query.data);
     } catch (err) {
       winstonLog.error(`getFact, Error: ${err}`);
       res.status(500).send(err);
@@ -58,8 +58,8 @@ export class catFactsController {
         limit: req.query.limit,
       };
 
-      const res: any = await axios.get(`https://catfact.ninja/facts`, {params});
-      res.status(200).json(res.data);
+      const query: any = await axios.get(`https://catfact.ninja/facts`, {params});
+      res.status(200).json(query.data);
     } catch (err) {
       winstonLog.error(`getFacts, Error: ${err}`);
       res.status(500).send(err);
@@ -76,8 +76,8 @@ export class catFactsController {
       const params = {
         limit: req.query.limit,
       };
-      const res: any = await axios.get(`https://catfact.ninja/breeds`, {params});
-      res.status(200).json(res.data);
+      const query: any = await axios.get(`https://catfact.ninja/breeds`, {params});
+      res.status(200).json(query.data);
     } catch (err) {
       winstonLog.error(`getBreeds, Error: ${err}`);
       res.status(500).send(err);
