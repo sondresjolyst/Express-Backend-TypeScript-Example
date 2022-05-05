@@ -22,6 +22,7 @@ export class App {
     this.port = port;
 
     this.initializeMiddlewares();
+    this.initializeControllers(controllers);
   }
 
   /**
@@ -46,7 +47,7 @@ export class App {
  */
   public listen() {
     this.app.listen(this.port, () => {
-      winstonLog.info(`⚡️[server]: Server is running at https://${this.host}:${this.port}`);
+      winstonLog.info(`⚡️[server]: Server is running at http://${this.host}:${this.port}`);
     });
   }
 }
