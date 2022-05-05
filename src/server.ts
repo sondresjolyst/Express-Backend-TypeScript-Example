@@ -4,12 +4,14 @@ import {catFactsController} from './routes/catFacts.controller';
 
 dotenv.config();
 
-const host: string = process.env['HOST'] || '0.0.0.0';
-const port: number = parseInt(process.env['PORT']!) || 8001;
+const host = process.env['HOST'] || '0.0.0.0';
+
+const port = Number(process.env['PORT']);
+const portNum = isNaN(port) ? 8001:port;
 
 // eslint-disable-next-line new-cap
-const app = new App([new catFactsController()], host, port);
+const app = new App([new catFactsController()], host, portNum);
 
-app.app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at https://${host}:${port}`);
+app.app.listen(portNum, () => {
+  console.log(`⚡️[server]: Server is running at https://${host}:${portNum}`);
 });
