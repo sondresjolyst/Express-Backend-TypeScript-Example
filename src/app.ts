@@ -3,8 +3,6 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import {winstonLog} from './services/winston';
 
-//Express-Backend-TypeScript-Example
-
 /**
  * Constructor
  */

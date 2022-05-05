@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  prod:
+    container_name: express-backend-container
+    build:
+      context: .
+      dockerfile: dockerfile.prod
+    ports:
+      - '1338:8001'
