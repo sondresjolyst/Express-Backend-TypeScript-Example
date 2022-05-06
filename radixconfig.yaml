@@ -1,0 +1,20 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: sondre-express-test-application
+spec:
+  environments:
+    - name: production
+      build:
+        from: master
+    - name: development
+      build:
+        from: development
+  components:
+    - name: backend
+      src: "."
+      # dockerfile: Dockerfile
+      ports:
+       - name: http
+         port: 1024
+      publicPort: http
