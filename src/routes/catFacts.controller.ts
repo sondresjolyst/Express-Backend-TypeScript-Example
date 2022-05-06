@@ -39,6 +39,7 @@ export class catFactsController {
       };
 
       const query: any = await axios.get(`https://catfact.ninja/fact`, {params});
+      winstonLog.info(`getFact: running`);
       res.status(200).json(query.data);
     } catch (err) {
       winstonLog.error(`getFact, Error: ${err}`);
@@ -59,6 +60,7 @@ export class catFactsController {
       };
 
       const query: any = await axios.get(`https://catfact.ninja/facts`, {params});
+      winstonLog.info(`getFacts: running`);
       res.status(200).json(query.data);
     } catch (err) {
       winstonLog.error(`getFacts, Error: ${err}`);
@@ -77,6 +79,7 @@ export class catFactsController {
         limit: req.query.limit,
       };
       const query: any = await axios.get(`https://catfact.ninja/breeds`, {params});
+      winstonLog.info(`getBreeds: running`);
       res.status(200).json(query.data);
     } catch (err) {
       winstonLog.error(`getBreeds, Error: ${err}`);
