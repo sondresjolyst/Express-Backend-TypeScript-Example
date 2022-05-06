@@ -9,7 +9,13 @@ RUN npm run build
 
 # Stage 2 Running the application
 FROM node:16.14.2-alpine
+
 WORKDIR /app
+
 COPY --from=build /app/dist .
-EXPOSE 8001
+
+USER 65534
+
+EXPOSE 1024
+
 CMD ["node", "server.js"]

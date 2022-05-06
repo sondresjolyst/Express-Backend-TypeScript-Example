@@ -5,6 +5,6 @@ services:
     container_name: express-backend-container
     build:
       context: .
-      dockerfile: dockerfile.prod
+      dockerfile: Dockerfile
     ports:
       - '1338:8001'
