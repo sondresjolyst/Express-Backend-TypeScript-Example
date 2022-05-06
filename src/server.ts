@@ -7,7 +7,7 @@ dotenv.config();
 const host = process.env['HOST'] || '0.0.0.0';
 
 const port = Number(process.env['PORT']);
-const portNum = isNaN(port) ? 8001:port;
+const portNum = isNaN(port) ? 1024:port;
 
 // eslint-disable-next-line new-cap
 const app = new App([new catFactsController()], host, portNum);
