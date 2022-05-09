@@ -55,6 +55,7 @@ export class catFactsController {
   private getFacts = async (req: express.Request, res: express.Response) => {
     try {
       const params = {
+        page: req.query.page,
         max_length: req.query.max_length,
         limit: req.query.limit,
       };
