@@ -13,8 +13,7 @@ spec:
   components:
     - name: backend
       src: "."
-      # dockerfile: Dockerfile
       ports:
        - name: http
-         port: 1024
+         port: 1025
       publicPort: http

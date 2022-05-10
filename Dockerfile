@@ -16,6 +16,6 @@ COPY --from=build /app/dist .
 
 USER 65534
 
-EXPOSE 1024
+EXPOSE 1025
 
 CMD ["node", "server.js"]
