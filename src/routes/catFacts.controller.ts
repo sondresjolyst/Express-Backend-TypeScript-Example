@@ -77,6 +77,7 @@ export class catFactsController {
   private getBreeds = async (req: express.Request, res: express.Response) => {
     try {
       const params = {
+        page: req.query.page,
         limit: req.query.limit,
       };
       const query: any = await axios.get(`https://catfact.ninja/breeds`, {params});
